@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* Paleta baseada no logo da APAE Joinville (girassol amarelo, folhas verdes, letras pretas) */
+@theme inline {
+  --color-brand: #00923F;
+  --color-brand-dark: #00702F;
+  --color-brand-deep: #0E3B22;
+  --color-brand-light: #E3F3E8;
+  --color-sun: #F6D31A;
+  --color-sun-dark: #E2B900;
+  --color-sun-light: #FFF5C7;
+  --color-ink: #1B1E19;
+  --color-muted: #50564D;
+  --color-muted-2: #6B7168;
+  --color-cream: #FFFBF0;
+  --color-line: #ECE6D3;
+  --color-line-strong: #DCD5BE;
+  --color-input-bg: #FFFEFA;
+  --color-mist: #C8D9CD;
+  --font-sans: var(--font-nunito), "Helvetica Neue", sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FFFBF0;
+  color: #1B1E19;
+  font-family: var(--font-nunito), "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+@utility container-apae {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@utility tag-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@utility title-h2 {
+  margin: 0;
+  font-family: var(--font-fredoka), var(--font-nunito), sans-serif;
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+@utility prose-apae {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #50564D;
+  text-wrap: pretty;
+}
+
+/* Animações de entrada (src/utils/interactiveScroll.ts) */
+.animatedSide,
+.animatedElementLeft,
+.animatedElementRight,
+.animatedElementBottom {
+  opacity: 0;
+}
+.fromLeft {
+  transform: translateX(-80px);
+}
+.fromRight {
+  transform: translateX(80px);
+}
+.fromBottom {
+  transform: translateY(48px);
+}
+.revealed {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animatedSide,
+  .animatedElementLeft,
+  .animatedElementRight,
+  .animatedElementBottom {
+    opacity: 1;
+  }
+}
+
+.apae-card {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.apae-card:hover {
+  transform: translateY(-4px);
+  border-color: #00923F;
+  box-shadow: 0 14px 30px -18px rgba(14, 59, 34, 0.45);
+}
+
+.apae-input {
+  font: inherit;
+  font-size: 16px;
+  padding: 13px 16px;
+  border: 1.5px solid #DCD5BE;
+  border-radius: 14px;
+  background: #FFFEFA;
+  color: #1B1E19;
+  min-height: 48px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.apae-input:focus {
+  outline: none;
+  border-color: #00923F;
+}
+
+:focus-visible {
+  outline: 3px solid #00923F;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
