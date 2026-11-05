@@ -16,13 +16,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
-      <div className="container-apae flex items-center justify-between gap-6 px-6 py-2.5">
-        <Link href="/" className="flex items-center gap-3 no-underline" aria-label="APAE de Joinville — página inicial">
-          <Image src={ApaeLogo} alt="" className="block h-[62px] w-auto" priority />
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-[22px] font-semibold text-ink">APAE</span>
-            <span className="text-[13px] font-bold text-muted-2">Joinville – SC</span>
-          </span>
+      <div className="container-apae flex items-center justify-between gap-6 px-6 py-1.5">
+        <Link href="/" className="flex items-center no-underline" aria-label="APAE de Joinville — página inicial">
+          <Image src={ApaeLogo} alt="" className="block h-[72px] w-auto lg:h-[88px]" priority />
         </Link>
 
         {/* Desktop */}
