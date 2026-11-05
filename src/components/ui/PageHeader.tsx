@@ -12,7 +12,7 @@ interface IPageHeader {
 export default function PageHeader({ tag, title, description, breadcrumb = [] }: IPageHeader) {
   return (
     <section className="relative overflow-hidden bg-brand-deep px-6 pb-20 pt-16 text-white">
-      {/* Círculos decorativos — remetem ao "60" do logo comemorativo */}
+      {/* Círculos decorativos */}
       <div className="pointer-events-none absolute -right-24 -top-28 h-[380px] w-[380px] rounded-full border-[28px] border-sun/90" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-4 top-44 h-[150px] w-[150px] rounded-full bg-brand" aria-hidden="true" />
 

@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid gap-12" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(230px, 100%), 1fr))" }}>
           <div className="flex flex-col gap-5">
             <div className="self-start rounded-[28px] bg-white p-3">
-              <Image src={ApaeLogo} alt="APAE de Joinville — 60 anos" className="h-[96px] w-auto" />
+              <Image src={ApaeLogo} alt="APAE de Joinville" className="h-[96px] w-auto" />
             </div>
             <p className="m-0 text-[15px] leading-[1.65]">{siteConfig.about}</p>
             <div className="flex gap-2">
