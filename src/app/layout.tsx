@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
+import Script from "next/script";
 import TopBar from "@/components/header/TopBar";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -41,6 +42,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main id="conteudo">{children}</main>
           <Footer />
         </div>
+        {/* VLibras: tradutor de Libras do governo federal. O script cria o botão flutuante sozinho */}
+        <Script src="https://vlibras.gov.br/app/vlibras-plugin.js" />
       </body>
     </html>
   );
